@@ -1,0 +1,222 @@
+/* Reset default browser padding & margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #36454F; /* Make sure background covers entire page */
+    font-family: Arial, Helvetica, sans-serif; /* Set font back */
+    font-size: 16px; /* Optional: restore base size */
+}
+
+/* Import Montserrat from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+/* Apply Montserrat to all section headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+
+
+/* Hero */
+.hero {
+    background-color: #111; /* Charcoal black */
+    color: white;
+    padding: 0;
+    min-height: 100vh;
+	min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+.hero-nav .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular weight */
+	text-decoration: none;
+	color: inherit;
+}
+
+.hero-nav nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+}
+
+.hero-nav nav a:hover {
+    opacity: 0.8;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 4.9rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+
+/* Sections */
+section {
+  padding: 4rem 5%;
+  border-bottom: 2px solid var(--charcoal);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* About Section Styling */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111; /* Charcoal black */
+    color: white;
+    padding: 60px 10%;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left; /* Keep all text aligned left */
+}
+
+.section-label {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #757577; /* Accent color */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.about-text h2 {
+    font-size: 2.8rem; /* Main heading */
+    margin-bottom: 20px;
+	color: #aeb0ba;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify; /* Justified text */
+	color: #757577;
+}
+
+.about-video {
+    flex: 1;
+    max-width: 45%;
+}
+
+.about-video video {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+
+
+/* Work Grid */
+#work {
+  background-color: #111; /* Charcoal black */
+  padding: 40px 20px;
+}
+
+#work h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #aeb0ba;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 videos per row */
+  gap: 20px;
+}
+
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+
+#contact {
+  background-color: #333333; /* Charcoal black */
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-icons {
+  margin-bottom: 20px;
+}
+
+.contact-icons a {
+  color: white;
+  font-size: 28px;
+  margin: 0 20px; /* space between icons */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-icons a:hover {
+  color: #aaa; /* subtle hover effect */
+}
+
+.contact-email {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.contact-email i {
+  margin-right: 8px;
+}
+
+.contact-footer {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
