@@ -92,32 +92,29 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.8;
 }
 
-/* Small screens: reduce padding/gaps and font-sizes to avoid wrapping */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero-nav {
-    padding: 12px 16px;
-    gap: 8px;
-  }
-
-  .hero-nav .logo {
-    font-size: 1rem;
-    max-width: 60vw;
+    flex-direction: row; /* ✅ Keep logo + nav in one line */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* allows slight wrapping if too narrow */
+    gap: 10px;
   }
 
   .hero-nav nav {
-    gap: 12px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .hero-nav .logo {
+    font-size: 1.1rem;
   }
 
   .hero-nav nav a {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
 
-/* Very small screens: compress links; if still overflowing you can hide text and use short labels */
-@media (max-width: 420px) {
-  .hero-nav .logo { max-width: 55vw; }
-  .hero-nav nav a { font-size: 0.9rem; }
-}
 
 
 
@@ -432,6 +429,7 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
 
