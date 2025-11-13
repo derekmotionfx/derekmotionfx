@@ -242,3 +242,85 @@ h2 {
   }
 }
 
+/* your existing CSS ... */
+
+/* ✅ Add this at the very bottom */
+@media (max-width: 1024px) {
+  section {
+    padding: 3rem 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* About Section */
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 8%;
+    gap: 20px;
+  }
+
+  .about-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: justify;
+  }
+
+  .about-video {
+    max-width: 100%;
+  }
+
+  .about-video video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Work Section */
+  #work {
+    padding: 30px 10px;
+  }
+
+  #work h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* Contact Section */
+  #contact {
+    padding: 30px 10px;
+  }
+
+  .contact-icons a {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+
+  .contact-email {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 2.5rem 5%;
+  }
+}
+
