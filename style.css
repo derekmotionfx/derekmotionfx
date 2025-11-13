@@ -34,27 +34,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ✅ Navigation */
-.hero-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  flex-wrap: wrap; /* allows wrapping if space is too small */
+.hero-nav { display: flex;
+		   justify-content: space-between;
+		   align-items: center;
+		   padding: 20px 40px;
+		   font-family: 'Montserrat', sans-serif; font-weight: 400; 
+		  }
+.hero-nav .logo { font-size: 1.3rem;
+				 font-weight: bold;
+				 text-decoration: none;
+				 color: inherit;
+				}
+.hero-nav nav a { color: white;
+				 text-decoration: none;
+				 margin-left: 20px;
+				 font-size: 1rem; 
+				 transition: opacity 0.3s ease;
+				}
+.hero-nav nava:hover {
+	opacity: 0.8; 
 }
-
-.hero-nav .logo {
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-  white-space: nowrap; /* keeps text on one line */
-}
-
-.hero-nav nav {
-  display: flex;
-  gap: 20
 
 
 /* Hero Text */
@@ -367,6 +366,7 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
 
