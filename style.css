@@ -1,424 +1,110 @@
-/* ✅ Reset default browser padding & margin */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --bg: #0f0f10;
+  --muted: #aeb0ba;
+  --accent: #8957FC;
+  --white: #f3f3f3;
+  --container: 1180px;
 }
 
-html, body {
-  height: 100%;
-  background-color: #36454F; /* Background for whole page */
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  scroll-behavior: smooth;
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--white);font-family:'Montserrat',sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.05)}
+.site-header .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{font-weight:700;letter-spacing:1px}
+.main-nav{display:flex;gap:22px}
+.main-nav a{color:var(--muted);transition:color .2s}
+.main-nav a:hover{color:var(--white)}
+.menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.2rem}
+
+/* Hero */
+.hero{display:flex;align-items:center;justify-content:center;min-height:90vh;text-align:center;background-color:var(--bg)}
+.hero-text h1{font-size:3rem;margin-bottom:12px}
+.hero-text p{font-size:1.2rem;color:var(--muted)}
+.muted{color:var(--muted);font-size:1rem;margin-top:8px}
+
+/* Showreel */
+.showreel-section{padding:60px 0;text-align:center;background-color:var(--bg)}
+.section-title{font-size:1.8rem;margin-bottom:24px;color:var(--muted)}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.5)}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+/* Work */
+.work{padding:60px 0;text-align:center}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+.video-card{border-radius:12px;overflow:hidden;background:#000;box-shadow:0 6px 25px rgba(0,0,0,0.4);transition:transform .3s,box-shadow .3s}
+.video-card:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(0,0,0,0.6)}
+.embed{position:relative;padding-bottom:56.25%;height:0}
+.embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(255,255,255,0.05);padding:40px 0;text-align:center;background-color:var(--bg)}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px}
+.footer-email a{color:var(--white);font-weight:600}
+.footer-social a{margin:0 10px;color:var(--muted);transition:color .2s}
+.footer-social a:hover{color:var(--white)}
+.muted{color:var(--muted);font-size:0.9rem}
+
+/* Reveal Animation */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.is-visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-text h1{font-size:2.2rem}
+  .hero-text p{font-size:1rem}
+  .main-nav{display:none}
+  .main-nav.open{display:flex;flex-direction:column;position:absolute;right:20px;top:60px;background:#111;padding:10px;border-radius:6px}
+  .menu-toggle{display:block}
 }
-
-/* ✅ Import Montserrat from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
-
-/* Apply Montserrat to all section headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-}
-
-/* ✅ Hero Section */
-.hero {
-  background-color: #111; /* Charcoal black */
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0;
-}
-
-/* ---- FORCE HERO NAV ONE-LINE + RESPONSIVE SHRINK ---- */
-/* Put this at the very end of style.css */
-
-.hero-nav {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  flex-wrap: nowrap !important;
-  gap: 12px !important;
-  padding: 10px 14px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* logo: allow it to shrink, but clamp font-size */
-.hero-nav .logo {
-  display: inline-block !important;
-  flex: 0 1 auto !important;         /* do not force growth, allow shrink */
-  min-width: 0 !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  font-weight: 700 !important;
-  color: inherit !important;
-  font-size: clamp(14px, 3.2vw, 20px) !important; /* responsive size */
-  max-width: 65vw !important;        /* prevents overflow */
-}
-/* Remove underline from logo text */
-.hero-nav .logo {
-  text-decoration: none !important;
-  border-bottom: none !important;
-}
-
-
-/* nav: allow to take remaining space and shrink items */
-.hero-nav nav {
-  display: flex !important;
-  gap: 14px !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  flex: 1 1 auto !important;         /* can shrink */
-  min-width: 0 !important;
-}
-
-/* links: clamp size and allow truncation if needed */
-.hero-nav nav a {
-  color: white !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  font-size: clamp(12px, 2.6vw, 16px) !important;
-  flex-shrink: 1 !important;
-  opacity: 1 !important;
-}
-
-/* tiny screens: reduce gaps a bit more */
-@media (max-width: 420px) {
-  .hero-nav {
-    gap: 8px !important;
-    padding: 8px 10px !important;
-  }
-  .hero-nav .logo { max-width: 58vw !important; font-size: clamp(12px, 4.5vw, 16px) !important; }
-  .hero-nav nav { gap: 8px !important; }
-  .hero-nav nav a { font-size: clamp(10px, 4.2vw, 14px) !important; }
-}
-
-/* fallback visual: if still wraps, make both items on same line by forcing inline-block */
-.hero-nav h1, .hero-nav nav { display: inline-flex !important; vertical-align: middle !important; }
-
-
-
-
-/* Hero Text */
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-
-.hero-content h2 {
-  font-size: 4.9rem;
-  margin-bottom: 10px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.hero-content p {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-}
-
-/* ✅ Responsive Design */
-@media (max-width: 1024px) {
-  .hero-content h2 {
-    font-size: 3.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.3rem;
-  }
-
-  .hero-nav {
-    padding: 15px 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 90vh;
-  }
-
-  .hero-nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero-nav nav a {
-    margin: 8px 10px;
-    font-size: 1rem;
-  }
-
-  .hero-content h2 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h2 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-
-
-
-/* Sections */
-section {
-  padding: 4rem 5%;
-  border-bottom: 2px solid var(--charcoal);
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* About Section Styling */
-.about-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #111; /* Charcoal black */
-    color: white;
-    padding: 60px 10%;
-    gap: 40px;
-}
-
-.about-text {
-    flex: 1;
-    max-width: 50%;
-    text-align: left; /* Keep all text aligned left */
-}
-
-.section-label {
-    display: block;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #757577; /* Accent color */
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.about-text h2 {
-    font-size: 2.8rem; /* Main heading */
-    margin-bottom: 20px;
-	color: #aeb0ba;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: justify; /* Justified text */
-	color: #757577;
-}
-
-.about-video {
-    flex: 1;
-    max-width: 45%;
-}
-
-.about-video video {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-}
-
-
-
-/* Work Grid */
-#work {
-  background-color: #111; /* Charcoal black */
-  padding: 40px 20px;
-}
-
-#work h2 {
-  font-family: 'Montserrat', sans-serif;
-  color: #aeb0ba;
-  font-size: 2.8rem;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 12px;
-}
-
-.video-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-}
-
-
-
-#contact {
-  background-color: #333333; /* Charcoal black */
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-}
-
+/* 🔧 Footer Icon Enhancement */
 .contact-icons {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px; /* space between icons */
+  margin-bottom: 10px;
 }
 
 .contact-icons a {
-  color: white;
-  font-size: 28px;
-  margin: 0 20px; /* space between icons */
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: var(--muted);
+  font-size: 1.6rem; /* bigger icon size */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .contact-icons a:hover {
-  color: #aaa; /* subtle hover effect */
+  color: var(--white);
+  transform: scale(1.2); /* subtle grow on hover */
 }
 
-.contact-email {
-  font-size: 16px;
-  margin-bottom: 15px;
+/* Email link styling */
+.footer-email a {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
-.contact-email i {
-  margin-right: 8px;
-}
-
-.contact-footer {
-  font-size: 14px;
+.footer-email a:hover {
   opacity: 0.8;
 }
 
-
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-}
-
-/* your existing CSS ... */
-
-/* ✅ Add this at the very bottom */
-@media (max-width: 1024px) {
-  section {
-    padding: 3rem 4%;
-  }
-}
-
-@media (max-width: 768px) {
-  /* About Section */
-  .about-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 8%;
+/* Responsive tuning */
+@media (max-width: 600px) {
+  .contact-icons {
     gap: 20px;
   }
 
-  .about-text {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .about-text p {
-    text-align: justify;
-  }
-
-  .about-video {
-    max-width: 100%;
-  }
-
-  .about-video video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Work Section */
-  #work {
-    padding: 30px 10px;
-  }
-
-  #work h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .video-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  /* Contact Section */
-  #contact {
-    padding: 30px 10px;
-  }
-
   .contact-icons a {
-    font-size: 24px;
-    margin: 0 10px;
+    font-size: 1.4rem;
   }
 
-  .contact-email {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-text h2 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  section {
-    padding: 2.5rem 5%;
+  .footer-email a {
+    font-size: 0.95rem;
   }
 }
-
-
-
-
-
-
-

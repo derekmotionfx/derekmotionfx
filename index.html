@@ -1,107 +1,169 @@
-<!DOCTYPE html>
-<link rel="icon" href="DEREK.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="DEREK.png">
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DEREK MOTIONFX</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="icon" href="DEREK.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-nav">
-        <h1> 
-		<a href="https://derekmotionfx.github.io/derekmotionfx" class="logo">DEREK MOTIONFX</a>
-		</h1>
-        <nav>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-        </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="#top">DEREK MOTIONFX</a>
+      <nav class="main-nav">
+        <a href="#work">Work</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     </div>
+  </header>
 
-    <div class="hero-content">
-        <h2>DEREK MOTIONFX</h2>
-        <p>Logo Animation | YouTube Intro | Animated Infographics</p>
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero-container">
+      <div class="hero-text reveal">
+        <h1>DEREK MOTIONFX</h1>
+        <p>Motion Design · Logo Animation · YouTube Intros</p>
+      </div>
     </div>
-</section>
+  </section>
 
-  
-  <section class="about-section" id="about">
-    <div class="about-text">
-        <span class="section-label">About</span>
-        <h2>Who am I</h2>
-        <p>
-            I create visually engaging and professional motion graphics, logo animations, and 
-            digital designs that help brands communicate their message effectively. My work blends 
-            creativity with precision, ensuring every frame tells a story. Whether it's a clean 
-            corporate animation or an eye-catching social media short, I focus on delivering 
-            content that connects with audiences and leaves a lasting impression.
-        </p>
+  <!-- Showreel Section -->
+  <section class="showreel-section" id="showreel">
+    <div class="container">
+      <h2 class="section-title reveal">Showreel</h2>
+      <div class="showreel reveal">
+        <div class="video-wrap">
+          <iframe
+            src="https://player.vimeo.com/video/1136453614?title=0&byline=0&portrait=0&loop=1&autoplay=1&muted=1&playsinline=1"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
     </div>
-    <div class="about-video">
-      <iframe src="https://player.vimeo.com/video/1110012187?title=0&byline=0&portrait=0&loop=1" 
-              width="100%" height="375" frameborder="0" 
-              allow="autoplay; fullscreen; picture-in-picture" 
-              allowfullscreen>
-      </iframe>
-</section>
-
-
+  </section>
 
   <!-- Work Section -->
-  <section id="work">
-  <h2>Featured Work</h2>
-  <div class="video-grid">
-  <div class="video-wrapper">
-    <iframe src="https://player.vimeo.com/video/1134524514?title=0&byline=0&portrait=0&loop=1&playsinline=1"
-      frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  </div>
-  <div class="video-wrapper">
-    <iframe src="https://player.vimeo.com/video/1134524658?title=0&byline=0&portrait=0&loop=1&playsinline=1"
-      frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  </div>
-  <div class="video-wrapper">
-    <iframe src="https://player.vimeo.com/video/1134524576?title=0&byline=0&portrait=0&loop=1&playsinline=1"
-      frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  </div>
-  <div class="video-wrapper">
-    <iframe src="https://player.vimeo.com/video/1134524550?title=0&byline=0&portrait=0&loop=1&playsinline=1"
-      frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</div>
+  <section id="work" class="work section">
+    <div class="container">
+      <h2 class="section-title reveal">Work</h2>
+      <div class="video-grid">
+	  
+	  <div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1136454673?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+		
+		<div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1136454708?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+		
+		<div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1136454746?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+		
+	  <div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1134524514?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+		
+        <div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1134524658?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
 
-</section>
+        <div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1134524576?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+		
+		<div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1136456926?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+		
+		<div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1136458126?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+		
+        <div class="video-card reveal">
+          <div class="embed">
+            <iframe src="https://player.vimeo.com/video/1134524550?title=0&byline=0&portrait=0&loop=1"
+                    allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-<!-- Contact Section -->
-<section id="contact">
-  <div class="contact-icons">
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner reveal">
+      <div class="contact-icons">
     <a href="https://vimeo.com" target="_blank"><i class="fab fa-vimeo-v"></i></a>
     <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
   </div>
+  <div class="footer-email">
+        <a href="mailto:derek.motionfx@gmail.com" >derek.motionfx@gmail.com</a>
+      </div>
+      <small class="muted">© <span id="year"></span> derek motionfx</small>
+    </div>
+  </footer>
 
-  <div class="contact-email">
-    <i class="fas fa-envelope"></i>derek.motionfx@gmail.com
-  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <div class="contact-footer">
-    ©derekmotionfx 2025
-  </div>
-</section>
+    // mobile nav toggle
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn?.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
 
+    // fade-in scroll animation
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(r => io.observe(r));
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
