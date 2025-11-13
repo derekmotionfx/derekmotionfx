@@ -33,65 +33,27 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-/* Navigation - responsive, no stacking */
-.hero-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 18px 32px;
-  gap: 12px;
-  box-sizing: border-box;
-  /* keep on single row unless absolutely necessary */
-  flex-wrap: nowrap;
+/* ✅ Navigation */
+.hero-nav { display: flex;
+		   justify-content: space-between;
+		   align-items: center;
+		   padding: 20px 40px;
+		   font-family: 'Montserrat', sans-serif; font-weight: 400; 
+		  }
+.hero-nav .logo { font-size: 1.3rem;
+				 font-weight: bold;
+				 text-decoration: none;
+				 color: inherit;
+				}
+.hero-nav nav a { color: white;
+				 text-decoration: none;
+				 margin-left: 20px;
+				 font-size: 1rem; 
+				 transition: opacity 0.3s ease;
+				}
+.hero-nav nava:hover {
+	opacity: 0.8; 
 }
-
-/* Logo (left) */
-.hero-nav h1 {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  flex: 0 0 auto;            /* don't grow, don't shrink by default */
-  min-width: 0;              /* allow overflow handling */
-}
-
-.hero-nav .logo {
-  display: inline-block;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: inherit;
-  white-space: nowrap;       /* prevent logo from wrapping to multiple lines */
-  overflow: hidden;
-  text-overflow: ellipsis;   /* if space is very small, shorten with ... */
-  max-width: 80vw;           /* protect against extreme overflow */
-}
-
-/* Nav (right) */
-.hero-nav nav {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1 1 auto;            /* allow nav to take remaining space and shrink if needed */
-  min-width: 0;              /* allow children to shrink */
-}
-
-/* Links */
-.hero-nav nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  white-space: nowrap;       /* keep each link on one line */
-  flex-shrink: 1;            /* allow shrinking when needed */
-  transition: opacity 0.2s;
-}
-
-/* Hover */
-.hero-nav nav a:hover {
-  opacity: 0.8;
-}
-
 @media (max-width: 768px) {
   .hero-nav {
     flex-direction: row; /* ✅ Keep logo + nav in one line */
@@ -114,9 +76,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
   }
 }
-
-
-
 
 
 /* Hero Text */
@@ -429,10 +388,6 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
-
-
-
-
 
 
 
