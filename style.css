@@ -34,26 +34,64 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ✅ Navigation */
-.hero-nav { display: flex;
-		   justify-content: space-between;
-		   align-items: center;
-		   padding: 20px 40px;
-		   font-family: 'Montserrat', sans-serif; font-weight: 400; 
-		  }
-.hero-nav .logo { font-size: 1.3rem;
-				 font-weight: bold;
-				 text-decoration: none;
-				 color: inherit;
-				}
-.hero-nav nav a { color: white;
-				 text-decoration: none;
-				 margin-left: 20px;
-				 font-size: 1rem; 
-				 transition: opacity 0.3s ease;
-				}
-.hero-nav nava:hover {
-	opacity: 0.8; 
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevent breaking into new lines */
+  padding: 20px 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  width: 100%;
 }
+
+.hero-nav h1 {
+  margin: 0;
+  flex-shrink: 0; /* Prevent logo from pushing links */
+}
+
+.hero-nav .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap; /* Keep logo text in one line */
+}
+
+.hero-nav nav {
+  display: flex;
+  gap: 20px; /* evenly spaced links */
+  flex-shrink: 0;
+}
+
+.hero-nav nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.hero-nav nav a:hover {
+  opacity: 0.8;
+}
+
+/* ✅ Optional: adjust spacing for smaller screens without stacking */
+@media (max-width: 600px) {
+  .hero-nav {
+    padding: 15px 20px;
+  }
+
+  .hero-nav .logo {
+    font-size: 1rem;
+  }
+
+  .hero-nav nav a {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+}
+
 
 
 /* Hero Text */
@@ -366,6 +404,7 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
 
