@@ -11,3 +11,17 @@ window.addEventListener("scroll", function() {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }, false);
+
+<script>
+  // Ensure hero-nav is forced to row on load (helps if another rule toggles it)
+  (function(){
+    const nav = document.querySelector('.hero-nav');
+    if(nav){
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'row';
+      nav.style.flexWrap = 'nowrap';
+    }
+  })();
+</script>
+
+
