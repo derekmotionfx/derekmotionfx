@@ -33,64 +33,92 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-/* ✅ Navigation */
+/* Navigation - responsive, no stacking */
 .hero-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap; /* Prevent breaking into new lines */
-  padding: 20px 40px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  justify-content: space-between;
   width: 100%;
+  padding: 18px 32px;
+  gap: 12px;
+  box-sizing: border-box;
+  /* keep on single row unless absolutely necessary */
+  flex-wrap: nowrap;
 }
 
+/* Logo (left) */
 .hero-nav h1 {
   margin: 0;
-  flex-shrink: 0; /* Prevent logo from pushing links */
+  padding: 0;
+  line-height: 1;
+  flex: 0 0 auto;            /* don't grow, don't shrink by default */
+  min-width: 0;              /* allow overflow handling */
 }
 
 .hero-nav .logo {
-  font-size: 1.3rem;
-  font-weight: bold;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
   text-decoration: none;
   color: inherit;
-  white-space: nowrap; /* Keep logo text in one line */
+  white-space: nowrap;       /* prevent logo from wrapping to multiple lines */
+  overflow: hidden;
+  text-overflow: ellipsis;   /* if space is very small, shorten with ... */
+  max-width: 80vw;           /* protect against extreme overflow */
 }
 
+/* Nav (right) */
 .hero-nav nav {
   display: flex;
-  gap: 20px; /* evenly spaced links */
-  flex-shrink: 0;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;            /* allow nav to take remaining space and shrink if needed */
+  min-width: 0;              /* allow children to shrink */
 }
 
+/* Links */
 .hero-nav nav a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
+  white-space: nowrap;       /* keep each link on one line */
+  flex-shrink: 1;            /* allow shrinking when needed */
+  transition: opacity 0.2s;
 }
 
+/* Hover */
 .hero-nav nav a:hover {
   opacity: 0.8;
 }
 
-/* ✅ Optional: adjust spacing for smaller screens without stacking */
+/* Small screens: reduce padding/gaps and font-sizes to avoid wrapping */
 @media (max-width: 600px) {
   .hero-nav {
-    padding: 15px 20px;
+    padding: 12px 16px;
+    gap: 8px;
   }
 
   .hero-nav .logo {
     font-size: 1rem;
+    max-width: 60vw;
+  }
+
+  .hero-nav nav {
+    gap: 12px;
   }
 
   .hero-nav nav a {
-    font-size: 0.9rem;
-    margin-left: 10px;
+    font-size: 0.95rem;
   }
 }
+
+/* Very small screens: compress links; if still overflowing you can hide text and use short labels */
+@media (max-width: 420px) {
+  .hero-nav .logo { max-width: 55vw; }
+  .hero-nav nav a { font-size: 0.9rem; }
+}
+
 
 
 
@@ -404,6 +432,7 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
 
