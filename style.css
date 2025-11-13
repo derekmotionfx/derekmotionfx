@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-/* Navigation */
+/* ✅ Navigation */
 .hero-nav {
   display: flex;
   justify-content: space-between;
@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px 40px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  flex-wrap: wrap; /* allows wrapping if space is too small */
 }
 
 .hero-nav .logo {
@@ -48,19 +49,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   text-decoration: none;
   color: inherit;
+  white-space: nowrap; /* keeps text on one line */
 }
 
-.hero-nav nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 1rem;
-  transition: opacity 0.3s ease;
-}
+.hero-nav nav {
+  display: flex;
+  gap: 20
 
-.hero-nav nav a:hover {
-  opacity: 0.8;
-}
 
 /* Hero Text */
 .hero-content {
@@ -372,5 +367,6 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
