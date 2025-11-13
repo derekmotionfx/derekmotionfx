@@ -60,9 +60,13 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit !important;
   font-size: clamp(14px, 3.2vw, 20px) !important; /* responsive size */
   max-width: 65vw !important;        /* prevents overflow */
+}
+/* Remove underline from logo text */
+.hero-nav .logo {
   text-decoration: none !important;
   border-bottom: none !important;
 }
+
 
 /* nav: allow to take remaining space and shrink items */
 .hero-nav nav {
@@ -411,6 +415,7 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
 
