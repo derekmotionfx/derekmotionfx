@@ -60,6 +60,8 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit !important;
   font-size: clamp(14px, 3.2vw, 20px) !important; /* responsive size */
   max-width: 65vw !important;        /* prevents overflow */
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 /* nav: allow to take remaining space and shrink items */
@@ -409,6 +411,7 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
 
