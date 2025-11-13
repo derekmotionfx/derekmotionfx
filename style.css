@@ -33,89 +33,69 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-/* --- HERO NAVIGATION FIX --- */
+/* ---- FORCE HERO NAV ONE-LINE + RESPONSIVE SHRINK ---- */
+/* Put this at the very end of style.css */
+
 .hero-nav {
-  display: flex;
-  flex-direction: row !important; /* Force row layout */
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 28px;
-  width: 100%;
-  box-sizing: border-box;
-  flex-wrap: nowrap;
-  background: transparent;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.hero-nav h1 {
-  margin: 0;
-}
-
+/* logo: allow it to shrink, but clamp font-size */
 .hero-nav .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: white;
-  white-space: nowrap;
-  transition: all 0.3s ease;
+  display: inline-block !important;
+  flex: 0 1 auto !important;         /* do not force growth, allow shrink */
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-weight: 700 !important;
+  color: inherit !important;
+  font-size: clamp(14px, 3.2vw, 20px) !important; /* responsive size */
+  max-width: 65vw !important;        /* prevents overflow */
 }
 
+/* nav: allow to take remaining space and shrink items */
 .hero-nav nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 24px;
+  display: flex !important;
+  gap: 14px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 1 1 auto !important;         /* can shrink */
+  min-width: 0 !important;
 }
 
+/* links: clamp size and allow truncation if needed */
 .hero-nav nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  white-space: nowrap;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: white !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  font-size: clamp(12px, 2.6vw, 16px) !important;
+  flex-shrink: 1 !important;
+  opacity: 1 !important;
 }
 
-.hero-nav nav a:hover {
-  opacity: 0.8;
-  transform: scale(1.05);
-}
-
-/* ✅ RESPONSIVE SHRINKING */
-@media (max-width: 768px) {
+/* tiny screens: reduce gaps a bit more */
+@media (max-width: 420px) {
   .hero-nav {
-    padding: 12px 18px;
+    gap: 8px !important;
+    padding: 8px 10px !important;
   }
-
-  .hero-nav .logo {
-    font-size: 1rem;
-  }
-
-  .hero-nav nav {
-    gap: 16px;
-  }
-
-  .hero-nav nav a {
-    font-size: 0.9rem;
-  }
+  .hero-nav .logo { max-width: 58vw !important; font-size: clamp(12px, 4.5vw, 16px) !important; }
+  .hero-nav nav { gap: 8px !important; }
+  .hero-nav nav a { font-size: clamp(10px, 4.2vw, 14px) !important; }
 }
 
-@media (max-width: 480px) {
-  .hero-nav {
-    padding: 10px 14px;
-  }
+/* fallback visual: if still wraps, make both items on same line by forcing inline-block */
+.hero-nav h1, .hero-nav nav { display: inline-flex !important; vertical-align: middle !important; }
 
-  .hero-nav .logo {
-    font-size: 0.85rem;
-  }
-
-  .hero-nav nav {
-    gap: 12px;
-  }
-
-  .hero-nav nav a {
-    font-size: 0.8rem;
-  }
-}
 
 
 
@@ -429,6 +409,7 @@ h2 {
     padding: 2.5rem 5%;
   }
 }
+
 
 
 
