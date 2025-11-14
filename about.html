@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – DEREKMOTIONFX</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="#top">DEREK MOTIONFX</a>
+      <nav class="main-nav">
+        <a href="#work">Work</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section section reveal">
+    <div class="container about-grid">
+
+      <!-- Left GIF -->
+      <div class="about-image">
+        <img src="dice-1804.gif" alt="Derek MotionFX" />
+      </div>
+
+      <!-- Right Text -->
+      <div class="about-text">
+        <h2>HI, I'M DEREK.</h2>
+
+        <p>I create logo animations, motion graphics, YouTube intros, and animated visual storytelling.
+		I specialize in motion design and digital animation. Over the past years, I’ve worked on brand animations, content for creators, visual identity motion, and stylized short-form edits.
+		I also create narrative shorts and animated sequences inspired by music, cinematography, and psychological storytelling.
+		I'm currently a freelance motion designer and editor based in India.</p>
+        <br>
+		<br>
+
+        <div class="contact-row">
+    <h2>CONTACT ME:</h2>
+    <a href="mailto:derek.motionfx@gmail.com" class="email-link">
+        derek.motionfx@gmail.com
+    </a>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner reveal">
+      <div class="contact-icons">
+    <a href="https://vimeo.com" target="_blank"><i class="fab fa-vimeo-v"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="footer-email">
+        <a href="mailto:derek.motionfx@gmail.com" >derek.motionfx@gmail.com</a>
+      </div>
+      <small class="muted">© <span id="year"></span> derek motionfx</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn?.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // fade-in scroll animation
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(r => io.observe(r));
+  </script>
+</body>
+</html>
